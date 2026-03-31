@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $host = getenv('DB_HOST') ?: "localhost";
 $user =  getenv('DB_USER') ?: "root"; 
-$pass =  getenv('DB_PASS') ?: "root"; 
+$pass =  getenv('DB_PASSWORD') ?: "root";  // ✅ FIXED: DB_PASSWORD not DB_PASS
 $db   =  getenv('DB_NAME') ?: "driptee_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
