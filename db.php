@@ -4,10 +4,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$host = "localhost";
-$user = "root"; 
-$pass = "root"; 
-$db   = "driptee_db";
+$host = getenv('DB_HOST') ?: "localhost";
+$user =  getenv('DB_USER') ?: "root"; 
+$pass =  getenv('DB_PASS') ?: "root"; 
+$db   =  getenv('DB_NAME') ?: "driptee_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
