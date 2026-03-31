@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: driptee-app
+    runtime: docker
+    plan: free
+    env:
+      - key: DB_PASSWORD
+        value: ${DB_PASSWORD}
+      - key: MYSQL_ROOT_PASSWORD
+        value: ${MYSQL_ROOT_PASSWORD}
